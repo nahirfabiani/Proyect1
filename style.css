@@ -1,0 +1,19 @@
+ .jumbotron-fluid {
+    background-image: url("ba1.jpg");
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+}
+  
+  .card-group {
+	margin: 20px 20px;
+	padding:10px;
+}
+
+ #footer {
+  /* position: fixed;
+  bottom: 0px; */
+}
