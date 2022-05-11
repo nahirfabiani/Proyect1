@@ -1,0 +1,226 @@
+<HTML>
+
+<HEAD>
+
+<TITLE>Verificacion de campos y envio</TITLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+
+
+
+function runTest(form, button)  {
+
+	Ret = false;
+
+	if (button.name == "1") Ret = testBox1(form);
+
+	if (button.name == "2") Ret = testBox2(form);
+
+	if (button.name == "3") Ret = testBox3(form);
+
+	if (button.name == "4") Ret = testBox4(form);
+
+	if (Ret)
+
+		alert ("Campo correcto!");
+
+}
+
+
+
+function testBox1(form) {
+
+	Ctrl = form.campo1;
+
+	if (Ctrl.value == "" || Ctrl.value.indexOf ('@', 0) == -1) {
+
+		validatePrompt (Ctrl, "Ingresar un E-mail")
+
+		return (false);
+
+	} else
+
+		return (true);
+
+}
+
+
+
+function testBox2(form) {
+
+	Ctrl = form.campo2;
+
+	if (Ctrl.value.length != 5) {
+
+		validatePrompt (Ctrl, "Ingresar cinco caracteres")
+
+		return (false);
+
+	} else
+
+		return (true);
+
+}
+
+
+
+function testBox3(form) {
+
+	Ctrl = form.campo3;
+
+	if (Ctrl.value.length < 3) {
+
+		validatePrompt (Ctrl, "Ingresar tres o mas caracteres")
+
+		return (false);
+
+	} else
+
+		return (true);
+
+}
+
+
+
+function testBox4(form) {
+
+	Ctrl = form.campo4;
+
+	if (Ctrl.value == "") {
+
+		validatePrompt (Ctrl, "Ingresar cualquier cosa")
+
+		return (false);
+
+	} else
+
+		return (true);
+
+}
+
+
+
+function runSubmit (form, button)  {
+
+	if (!testBox1(form)) return;
+
+	if (!testBox2(form)) return;
+
+	if (!testBox3(form)) return;
+
+	if (!testBox4(form)) return;
+
+	alert ("Todos los campos OK! Se procede a enviar");
+
+	document.test.submit();	
+
+}
+
+
+
+function validatePrompt (Ctrl, PromptStr) {
+
+	alert (PromptStr)
+
+	Ctrl.focus();
+
+	return;
+
+}
+
+
+
+
+
+function loadDoc() {
+
+	// initial focus; use if needed
+
+	document.test.campo1.focus ();
+
+	return;
+
+}
+
+//-->
+
+</SCRIPT>
+
+</HEAD>
+
+<BODY  bgcolor="2d7ac0" onLoad="loadDoc()">
+
+<CENTER>
+
+<H3>Verificaci&oacute;n de campos en un formulario con JavaScript.<BR> Envio a un servidor.</H3></CENTER>
+
+<center>
+
+<FORM NAME="test" ACTION="http://mecaniza.sestud.uv.es/cgi-bin/test2-cgi" METHOD=GET>
+<table border>
+<tr>
+    <td>Entra tu E-mail (p.ej.: pepe@uv.es):</td>
+
+    <td><INPUT TYPE="text" NAME="campo1"></td>
+
+    <td><INPUT TYPE="button" NAME="1" VALUE="Test" 
+         onClick="runTest(this.form, this)"></td>
+</tr>
+<tr>
+    <td>Entrar cinco caracteres: </td>
+
+    <td><INPUT TYPE="text" NAME="campo2"></td>
+
+    <td><INPUT TYPE="button" NAME="2" VALUE="Test" 
+         onClick="runTest(this.form, this)"></td>
+
+</tr>
+<tr>
+
+
+    <td>Entrar tres o m&aacute;s caracteres:</td>
+
+    <td><INPUT TYPE="text" NAME="campo3"></td>
+
+    <td><INPUT TYPE="button" NAME="3" VALUE="Test" 
+         onClick="runTest(this.form, this)"></td>
+</tr>
+<tr>
+    <td>Entrar cualquier cosa:</td>
+
+    <td><INPUT TYPE="text" NAME="campo4"></td>
+
+    <td><INPUT TYPE="button" NAME="4" VALUE="Test" 
+        onClick="runTest(this.form, this)"></td>
+</tr>
+<tr>
+    <td align=center><INPUT TYPE="button" NAME="Tfin" VALUE="Test final + envio" onClick="runSubmit(this.form, this)"></td>
+    <td align=center><input type="reset" name="reset" 
+         value="Inicializar" onClick="this.form.campo1.value = ''"></td>
+</tr>
+
+</FORM>
+
+</table>
+
+</center>
+
+
+
+<hr>
+<center>
+<h3>
+[<a href="javascr.htm">Volver</a>]
+</h3>
+</center>
+
+</BODY>
+
+
+
+</HTML>
+
+
+

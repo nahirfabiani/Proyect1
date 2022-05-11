@@ -17,3 +17,52 @@
   /* position: fixed;
   bottom: 0px; */
 }
+
+#precios {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 200px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#precios div {
+  height: 100%;
+  width: 260px;
+  margin: 3px;
+  text-align: center;
+  vertical-align:middle
+}
+
+.azul {
+  border: 2px solid; 
+  border-color: #007BFF;
+}
+
+.turquesa {
+  border: 2px solid; 
+  border-color: #1DA5BA;
+}
+
+.amarillo {
+  border: 2px solid; 
+  border-color: #F8C221;
+}
+
+#form {
+  width:800px;
+  margin:3px auto;
+}
+
+#borrar  {
+  background-color: #96C93E;
+  border:none;
+  font-size: 25px;
+  margin-top: 20px;
+}
+#resumen {
+  background-color: #96C93E;
+  border:none;
+  font-size: 25px;
+  margin-top: 20px;
+}
